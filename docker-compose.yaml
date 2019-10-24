@@ -1,0 +1,48 @@
+version : "3.2"
+
+# configs:
+#   obyte-witness-config:
+#     file: ./configs/conf.json
+# secrets:
+#   obyte-witness-keys:
+#     file: ./config/keys.json
+
+services:
+  tor_socks_proxy:
+    # build:
+    #   context: ../tor_proxy/docker
+    #   dockerfile: Dockerfile_alpine
+      #args:
+      #  buildno:1
+    image: tor_socks_proxy
+    container_name: tor_socks_proxy
+    restart: unless-stopped
+    expose:
+      - "9050"
+    networks:
+      - net-obyte-internal
+      #- net-tor
+  obyte_witness:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile_obyte
+      #args:
+      #  buildno: 1
+      #  
+    image: obyte-witness-node
+    restart: unless-stopped
+    container_name: obyte_witness
+    tty: true
+    entrypoint: /bin/bash
+    volumes:
+      #- ./deployment/.config/obyte-witness/conf.json:/home/obyte/.config/obyte-witness/conf.json:ro
+      #- ./deployment/.config/obyte-witness/keys.json:/home/obyte/.config/obyte-witness/keys.json
+      #- ./deployment/data/obyte-witness/byteball.sqlite*:/home/obyte/.config/obyte-witness/
+      - ./docker/configs/.config:/home/obyte/.config
+    networks:
+      - net-obyte-internal
+
+
+networks:
+  net-obyte-internal:
+#  net-tor:

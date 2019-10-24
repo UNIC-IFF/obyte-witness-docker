@@ -1,0 +1,22 @@
+{
+    "port": null,
+    "storage": "sqlite",
+    "deviceName": "unicobyte",
+    "permanent_pairing_secret": "donotshow2you",
+    "control_addresses": [],
+    "payout_address": "unicwalletaddress",
+    "bLight": false,
+    "bServeAsHub": false,
+    "bWantNewPeers": true,
+    "socksHost": "tor_socks_proxy",
+    "socksPort":"9050",
+    "socksLocalDNS":false,
+    "smtpTransport": "relay",
+    "smtpRelay": "smtp.office365.com",
+    "smtpUser": "validators@unic.ac.cy",
+    "smtpPassword": "emailpass",
+    "smtpSsl": true,
+    "smtpPort": 587,
+    "admin_email": "inglezakis.a@unic.ac.cy",
+    "from_email": "validators@unic.ac.cy"
+}

@@ -1,0 +1,51 @@
+#FROM debian:buster-slim
+FROM node:10
+
+
+#EXPOSE 6611
+#EXPOSE 80
+# port to be used for email
+#EXPOSE 587
+
+RUN apt-get update; apt-get install -y curl software-properties-common sqlite3 \
+                                    git nano vim 
+# ssmtp logrotate
+# nodejs npm node-sqlite3\
+
+#RUN apt-get install -y sendmail sendmailconfig
+#RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
+
+RUN useradd -ms /bin/bash obyte
+
+
+RUN mkdir /obyte
+
+USER obyte
+WORKDIR /home/obyte
+
+RUN git clone https://github.com/byteball/headless-obyte.git 
+RUN git clone https://github.com/byteball/ocore.git 
+RUN git clone https://github.com/byteball/obyte-witness.git
+
+WORKDIR /home/obyte/headless-obyte
+RUN npm install
+
+WORKDIR /home/obyte/ocore
+RUN npm install
+
+WORKDIR /home/obyte/obyte-witness
+#RUN echo "testnet=1" > .env
+RUN npm install
+
+#RUN npm install bitcore-mnemonic
+
+#RUN rm -r node_modules/ocore
+#RUN rm -r node_modules/headless-obyte
+#RUN git clone https://github.com/byteball/ocore.git ./node_modules/ocore
+#RUN git clone https://github.com/byteball/headless-obyte.git ./node_modules/headless-obyyr
+
+#COPY byteball_conf.js ./node_modules/byteballcore/conf.js
+
+#COPY byteball_ssmtp.conf /etc/ssmtp/ssmtp.conf
+
+CMD node start.js
