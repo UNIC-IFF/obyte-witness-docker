@@ -10,7 +10,13 @@ services:
     networks:
       - net-obyte-internal
   obyte_witness:
-    image: antiggl/obyte-witness-node
+    build:
+      context: ./docker
+      dockerfile: Dockerfile_obyte
+      #args:
+      #  buildno: 1
+      #  
+    image: obyte-witness-node
     restart: unless-stopped
     container_name: obyte_witness
     tty: true
@@ -22,8 +28,10 @@ services:
       #- ./docker/configs/.config:/home/obyte/.config
     networks:
       - net-obyte-internal
+
 networks:
   net-obyte-internal:
+#  net-tor:
 
 # Utilizing docker volumes
 volumes:
