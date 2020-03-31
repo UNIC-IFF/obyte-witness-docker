@@ -1,0 +1,13 @@
+/home/node/.config/obyte-witness/log.txt {
+	daily
+	rotate 2
+	compress
+	delaycompress
+	missingok
+	notifempty
+	create 644 node node
+#	sharedscripts
+#	postrotate
+#                node --max-old-space-size=4096 /home/node/obyte/obyte-witness/start.js
+#        endscript
+}

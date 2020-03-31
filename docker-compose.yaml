@@ -10,18 +10,26 @@ services:
     networks:
       - net-obyte-internal
   obyte_witness:
-    image: antiggl/obyte-witness-node
+    build:
+      context: ./docker
+      dockerfile: Dockerfile_obyte
+      #args:
+      #  buildno: 1
+      #  
+    image: obyte-witness-node
     restart: unless-stopped
     container_name: obyte_witness
     tty: true
     entrypoint: /bin/bash
+    #command : node --max-old-space-size=4096 start.js
     volumes:
       # Utilizing docker volumes
-      - obyte-witness-config:/home/obyte/.config
+      - obyte-witness-config:/home/node/.config
       # Utilizing docker bind volume (maps to local filesystem)
-      #- ./docker/configs/.config:/home/obyte/.config
+      #- ${HOME}/obyte_deployment/configs/.config:/home/node/.config
     networks:
       - net-obyte-internal
+
 networks:
   net-obyte-internal:
 
