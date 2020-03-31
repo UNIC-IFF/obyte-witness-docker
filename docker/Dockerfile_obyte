@@ -37,6 +37,11 @@ WORKDIR /home/node/obyte/obyte-witness
 #RUN echo "testnet=1" > .env
 RUN npm install
 
+## Clean up a bit
+RUN rm -rf /home/node/obyte/ocore &&\
+	rm -rf /home/node/obyte/headless-obyte
+
+
 VOLUME /home/node/.config
 #RUN npm install bitcore-mnemonic
 

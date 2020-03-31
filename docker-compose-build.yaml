@@ -10,13 +10,13 @@ services:
     networks:
       - net-obyte-internal
   obyte_witness:
-    #build:
-    #  context: ./docker
-    #  dockerfile: Dockerfile_obyte
+    build:
+      context: ./docker
+      dockerfile: Dockerfile_obyte
       #args:
       #  buildno: 1
       #  
-    image: uniciff/obyte-witness
+    image: obyte-witness-node
     restart: unless-stopped
     container_name: obyte_witness
     tty: true

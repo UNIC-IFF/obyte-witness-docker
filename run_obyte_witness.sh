@@ -3,6 +3,7 @@
 # create docker volume ( only when we run docker with volume)
 docker volume create obyte-witness-config
 
+#docker-compose -f docker-compose-build.yaml up -d
 docker-compose -f docker-compose.yaml up -d
 
 # wait till done
