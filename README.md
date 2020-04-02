@@ -96,8 +96,8 @@ chmod +x ./replace_witnesses.sh
 IFF Research Team @ UNIC
 
 * Antonios Inglezakis ( @antIggl ) - Researcher / Senior Software Engineer and Systems Administrator, University of Nicosia - Institute For the Future (UNIC-IFF)
-* Klitos Christodoulou ( @klitos ) - Research Manager and Faculty Member, University of Nicosia - Institute For the Future (UNIC-IFF)
-* Elias Iosif - Faculty Member, University of Nicosia - Institute For the Future (UNIC-IFF)
+* Klitos Christodoulou ( @klitoschr ) - Research Manager and Faculty Member, University of Nicosia - Institute For the Future (UNIC-IFF)
+* Elias Iosif ( @iosife ) - Faculty Member, University of Nicosia - Institute For the Future (UNIC-IFF)
 
 ## About IFF 
 
