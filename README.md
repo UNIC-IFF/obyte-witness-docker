@@ -1,3 +1,5 @@
+:no_entry: [DEPRECATED] Active at https://github.com/UniversityOfNicosia/obyte-witness-docker 
+
 # Dockerized Order Provider (Witness) Node
 
 To run an Obyte Order Provider (Witness) Node, one can either build the Obyte witness node OR pull the image direcly from [UNIC-IFF Dockerhub](https://hub.docker.com/orgs/uniciff/repositories). 
